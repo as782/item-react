@@ -1,29 +1,29 @@
 import React from 'react'
 //头部 导航 组件
 import { NavLink } from 'react-router-dom'
-import './header.css'
+import { Headerstyle } from './header.js'
 export default function Header() {
   return (
-    <div className='header'>
+    <Headerstyle>
       <div className="nav-top">
-        <h1 className='Logo sprite_01'><NavLink  to='/discover'/></h1>
+        <h1 className='Logo sprite_01'><NavLink to='/discover' /></h1>
         <ul className="navList">
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''} to='/discover'>发现音乐
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/discover'>发现音乐
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''}  to='/mine'>我的音乐
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/mine'>我的音乐
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''} to='/friend'>我的朋友
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/friend'>我的朋友
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''} to='/ '>商城
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/ '>商城
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''} to='/ '>音乐人
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/ '>音乐人
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
-          <li className='listItem'><NavLink className={({isActive})=> isActive? ' select':''} to='/ '>下载客户端
+          <li className='listItem'><NavLink className={({ isActive }) => isActive ? ' select' : ''} to='/ '>下载客户端
             <span className='sprite_01 arrow'></span>
           </NavLink></li>
         </ul>
@@ -36,7 +36,7 @@ export default function Header() {
           </div>
           <div className="createbox">
             <div className='create'>
-              <NavLink to='/firend'>创作者中心</NavLink> 
+              <NavLink to='/firend'>创作者中心</NavLink>
             </div>
           </div>
           <div className="avatarbox">
@@ -46,7 +46,9 @@ export default function Header() {
           </div>
         </div>
       </div>
-    <div className="red-line"></div>
-    </div>
+      <div className="red-line"></div>
+    </Headerstyle>
+
+
   )
 }
