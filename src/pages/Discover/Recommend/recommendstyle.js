@@ -16,7 +16,9 @@ export const MainContentStyled = styled.div`
 `
 export const ContentLeftStyled = styled.div`
     flex-grow: 1;
-    padding: 20px 20px 40px;    
+    width:688px;
+    padding: 20px 20px 40px;
+      
 `
 export const ContentRightStyled = styled.div`
     width:250px;

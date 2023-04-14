@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import banner_sprite from   '@/assets/img/banner_sprite.png';
 import download from '@/assets/img/download.png'
 export const CarouselStyled = styled.div`
-     position: relative;
-    .carouselBox{        
+    
+    .carouselBox{ 
+         
         .wrap{
-            
+            position: relative;   
+            z-index:2;  
             width: 982px;
             height: 285px; 
             margin: 0 auto;   
-            overflow: hidden;      
+                    
             .car{
                 width:730px; 
                 
@@ -18,7 +20,8 @@ export const CarouselStyled = styled.div`
                     height:285px;
                 }
             }
-            .btn{       
+            .btn{   
+                z-index:10;      
                 display: block;
                 position: absolute;
                 top: 50%;
@@ -26,19 +29,17 @@ export const CarouselStyled = styled.div`
                 width: 37px;
                 height: 63px;
                 text-indent: -9999px;
-                background:url(${banner_sprite}) no-repeat   ;
-                 
-                 
+                background:url(${banner_sprite}) no-repeat   ; 
             }
             .prev{
-                left:200px;
+                left:-68px;
                 background-position:0px -360px;
                  &:hover{
                     background-position:0px -430px;
                  }
             }
             .next{
-                right:200px;
+                right:-68px;
                 background-position: 0px -508px;
                 &:hover{
                     background-position: 0px -578px;
@@ -48,8 +49,8 @@ export const CarouselStyled = styled.div`
             .download{
                 position: absolute;
                 top: 0;
-                z-index: 20;
-                right: 270px;
+                z-index: 5;
+                right: 0px;
                 width: 254px;
                 height: 285px;
                 box-sizing:border-box;

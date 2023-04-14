@@ -17,13 +17,13 @@ export default function Discover(props) {
               <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='rankings'><em>排行榜</em></NavLink>
             </li>
             <li className='navitem'>
-              <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='playlist'><em>排行榜</em></NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='playlist'><em>歌单</em></NavLink>
             </li>
             <li className='navitem'>
               <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='radio'><em>主播电台</em></NavLink>
             </li>
             <li className='navitem'>
-              <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='singer'><em>主播电台</em></NavLink>
+              <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='singer'><em>歌手</em></NavLink>
             </li>
             <li className='navitem'>
               <NavLink className={({ isActive }) => isActive ? 'menu-active' : ''} to='newdisc'><em>新碟上架</em></NavLink>

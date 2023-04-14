@@ -1,25 +1,24 @@
+// 顶部轮播图
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { Carousel } from 'antd';
-import { getBannerDataAction } from '@/redux/actions/banner_action';
-import {CarouselStyled} from './topbannerstyled'
+import { getBannerDataAction } from '@/redux/recommend/actions/actionCreater';
+import { CarouselStyled } from './topbannerstyled'
 export default function TopBanner() {
-    // let { bannerData } = useSelector(state => state.recommend);
-    // let dispatch = useDispatch()
-    // let getdata = () => {
-    //   console.log(bannerData);
-    //   localStorage.setItem('banners',JSON.stringify(bannerData))
-    // }
-    // useEffect(() => {
-    //   dispatch(getBannerDataAction())
-    // })
-    let [currentIndex, setCurrentIndex] = useState(0);
-    let carousel = useRef();
 
-    let bannerData = JSON.parse(localStorage.getItem('banners'))
+    let { banners } = useSelector(state =>state.bannerdata);
+    let dispatch = useDispatch()
+    let carousel = useRef();
+    //设置轮播图当前序号状态
+    let [currentIndex, setCurrentIndex] = useState(0);
     // 获取模糊图片的地址
-    let bgImgUrl = bannerData.banners[currentIndex].imageUrl + "?imageView&blur=40x20";
+    let bgImgUrl = banners[currentIndex].imageUrl + "?imageView&blur=40x20";
+    // 组件挂载就获取数据
+    useEffect(() => {
+        console.log("banner");
+        dispatch(getBannerDataAction())
+    },[dispatch])
     //监听轮播图的index
     function indexChange(_, currentIndex) {
         setCurrentIndex(currentIndex)
@@ -34,10 +33,12 @@ export default function TopBanner() {
                 <div className="wrap">
                     <Carousel className='car' ref={carousel} autoplay beforeChange={indexChange}>
                         {
-                            bannerData.banners.map((item) => {
+                            banners.map((item,index) => {
                                 return (
-                                    <div key={item.encodeId} className='carousel-item'>
-                                        <img className='img-car' src={item.imageUrl} alt={item.typeTitle} />
+                                    <div key={index}  className='carousel-item'>
+                                        <a className='mask'  rel="noreferrer" target='_blank' href={`https://music.163.com/#/song?id=${item.targetId}`} >
+                                            <img  className='img-car' src={item.imageUrl} alt={item.typeTitle} />
+                                        </a>
                                     </div>
                                 )
                             })
