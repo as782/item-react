@@ -11,7 +11,7 @@ export const bannerAction = (data) => { return { type: GETBANNER, bannerData: da
 export const getBannerDataAction = () => {
     return (dispatch) => {
         getBannerData().then(res => {
-
+            console.log('@');
             dispatch(bannerAction(res.data))
         })
     }

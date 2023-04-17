@@ -1,15 +1,16 @@
 // 入驻歌手边栏
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getHotSingerAction } from '../../../../redux/recommend/actions/actionCreater';
 import { SettledSingerStyled } from './settledsingerstyled'
-export default function SettledSinger() {
+export default memo(function SettledSinger() {
     const dispatch = useDispatch();
-    const singerInfo = useSelector(state => state.hotsinger) || [];
+    const singerInfo = useSelector(state => state.recommend.hotSingerData) || [];
     useEffect(() => {
         dispatch(getHotSingerAction());
     }, [dispatch]);
     return (
+
         <SettledSingerStyled>
             <div className="head">
                 <span className="tt">入驻歌手</span>
@@ -17,13 +18,13 @@ export default function SettledSinger() {
             </div>
             <div className="listbox">
                 <ul className="s-list">
-                     {
+                    {
                         singerInfo.map(item => {
                             return (
                                 <li key={item.id} className="item">
                                     <a href={`/user/home?id=${item.id}`} className="infobox">
                                         <div className="h-d">
-                                            <img className='h-img' src={item.picUrl} alt={item.name}/>
+                                            <img className='h-img' src={item.picUrl} alt={item.name} />
                                         </div>
                                         <div className='info'>
                                             <h4>
@@ -45,4 +46,4 @@ export default function SettledSinger() {
             </div>
         </SettledSingerStyled>
     )
-}
+})

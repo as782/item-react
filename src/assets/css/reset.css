@@ -2,13 +2,44 @@
 /* @import '~antd/dist/antd.css'; */
 
 /* 样式的重置 */
-body, html, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, header, menu, section, p, input, td, th, ins {
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header,
+menu,
+section,
+p,
+input,
+td,
+th,
+ins {
   padding: 0;
   margin: 0;
- 
+
+
 }
 
-ul, ol, li {
+body,
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+
+ul,
+ol,
+li {
   list-style: none;
 }
 
@@ -22,11 +53,16 @@ a:hover {
   text-decoration: none;
 }
 
-i, em {
+i,
+em {
   font-style: normal;
 }
 
-input, textarea, button, select, a {
+input,
+textarea,
+button,
+select,
+a {
   outline: none;
   border: none;
 }
@@ -42,7 +78,11 @@ img {
 }
 
 /* 全局样式 */
-body, textarea, select, input, button {
+body,
+textarea,
+select,
+input,
+button {
   font-size: 12px;
   color: #333;
   font-family: Arial, Helvetica, sans-serif;
@@ -65,9 +105,10 @@ body, textarea, select, input, button {
   margin: 0 auto;
 }
 
-.none{
+.none {
   display: none;
 }
+
 .inline-block {
   display: inline-block;
 }
@@ -79,7 +120,7 @@ body, textarea, select, input, button {
 .sprite_02 {
   background: url(../img/sprite_02.png) no-repeat 0 9999px;
 }
- 
+
 .sprite_covor {
   background: url(../img/sprite_cover.png) no-repeat 0 9999px;
 }
@@ -91,6 +132,7 @@ body, textarea, select, input, button {
 .sprite_icon2 {
   background: url(../img/sprite_icon2.png) no-repeat 0 9999px;
 }
+
 .sprite_icon3 {
   background: url(../img/sprite_icon3.png) no-repeat 0 9999px;
 }

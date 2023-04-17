@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { HotReContentStyled } from './hotrecommend'
 import ThemeHeader from '@/components/Header-recommend';
 import SongCover from '@/components/Song-cover';
 import { useDispatch, useSelector } from 'react-redux';
 // 获取songer的action
 import { getSongCoverAction } from '@/redux/recommend/actions/actionCreater';
-export default function HotReContent() {
+export default memo(function HotReContent() {
   let dispatch = useDispatch();
-  let { result } = useSelector((state) => state.songcoverdata)
-  
-  let resultdata = result ||[];
+  let { result } = useSelector((state) => state.recommend.songcoverData)
+
+
   useEffect(() => {
     dispatch(getSongCoverAction())
   }, [dispatch])
@@ -22,10 +22,10 @@ export default function HotReContent() {
       <ul className='listbox'>
 
         {
-          resultdata.map((item) => {
+          result && result.map((item) => {
             return (
               <li key={item.id} className="itembox">
-                <SongCover songdata = {item} />
+                <SongCover songdata={item} />
               </li>
             )
           })
@@ -35,3 +35,4 @@ export default function HotReContent() {
     </HotReContentStyled>
   )
 }
+)

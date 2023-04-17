@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {
   RecommendStyle, MainContentStyled,
   ContentLeftStyled,
@@ -11,9 +11,7 @@ import RankingRec from './RankingRec';
 import Login from './Login';
 import SettledSinger from './SettledSinger';
 import HotDj from './HotDj';
-export default function Recommend() {
-
-
+export default memo(function Recommend() {
   return (
     <RecommendStyle>
       {/* 轮播图区域 */}
@@ -46,3 +44,4 @@ export default function Recommend() {
     </RecommendStyle>
   )
 }
+)

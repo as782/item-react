@@ -14,9 +14,7 @@ export const Footerstyle = styled.div`
 
     .footer {
         width: 980px;
-        margin: 0 auto;
-
-       
+        margin: 0 auto; 
     }
 
 }
@@ -29,7 +27,7 @@ export const FooterCenter = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-top: 33px;
-
+   
     .item{
         width: 45px;
         margin-left: 80px;
@@ -113,13 +111,13 @@ export const FooterCenter = styled.div`
 
 `
 export const FooterCopy = styled.div`
-
+ 
 .copy{
-    padding-top: 60px;
-    line-height: 24px;
+    padding-top: 50px;
+    line-height: 14px;
     margin: 0 auto;
     text-align: center;
-
+   
     .link{
 
         .line{

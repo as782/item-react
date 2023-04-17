@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RangingRecTable } from './ranktable'
 import { getRabkingAction } from '@/redux/recommend/actions/actionCreater';
-export default function RankTable(props) {
-    const rankData = useSelector(state => state.rankthreedata) || [];
+export default memo(function RankTable(props) {
+    const rankData = useSelector(state => state.recommend.rankThreeData);
     const dispatch = useDispatch();
     useEffect(() => {
         // 飙升榜19723756 新歌榜3779629 原创榜2884035 id
@@ -11,6 +11,7 @@ export default function RankTable(props) {
     }, [dispatch]);
 
     return (
+
         <RangingRecTable >
             <div className="rank-t">
                 {
@@ -33,10 +34,10 @@ export default function RankTable(props) {
                                 <div className="t-tr">
                                     <ol className="rnk-list">
                                         {
-                                            item.tracks.slice(0, 10).map((songitem,index) => {
+                                            item.tracks.slice(0, 10).map((songitem, index) => {
                                                 return (
                                                     <li key={songitem.id} className="rnk-item">
-                                                        <span className='r-num'>{index+1}</span>
+                                                        <span className='r-num'>{index + 1}</span>
                                                         <a href={`/song?id=${songitem.id}`} className="s-link" title={songitem.name}>{songitem.name}</a>
                                                         {/* 播放，收藏，添加播放列表 */}
                                                         <div className="op-bar">
@@ -62,3 +63,4 @@ export default function RankTable(props) {
         </RangingRecTable>
     )
 }
+)
